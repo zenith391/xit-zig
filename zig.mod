@@ -3,3 +3,4 @@ name: xit-zig
 license: MIT
 description: GUI application for [x]it! specification
 root_dependencies:
+  - src: git https://github.com/zenith391/zgt

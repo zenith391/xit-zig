@@ -1,7 +1,7 @@
 const std = @import("std");
 const deps = @import("deps.zig");
 
-pub fn build(b: *std.build.Builder) void {
+pub fn build(b: *std.build.Builder) !void {
     // Standard target options allows the person running `zig build` to choose
     // what target to build for. Here we do not override the defaults, which
     // means any target is allowed, and the default is native. Other options
@@ -15,7 +15,7 @@ pub fn build(b: *std.build.Builder) void {
     const exe = b.addExecutable("xit-zig", "src/main.zig");
     exe.setTarget(target);
     exe.setBuildMode(mode);
-    deps.addAllTo(exe);
+    try @import(".zigmod/deps/git/github.com/zenith391/zgt/build.zig").install(exe, ".zigmod/deps/git/github.com/zenith391/zgt/");
     exe.install();
 
     const run_cmd = exe.run();
