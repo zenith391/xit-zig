@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+zig.mod text eol=lf
+zigmod.* text eol=lf
+zig.mod linguist-language=YAML
+zig.mod gitlab-language=yaml
